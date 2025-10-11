@@ -6,8 +6,8 @@ const WhatsAppChat: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [message, setMessage] = useState('');
 
-  // WhatsApp business number (replace with actual number)
-  const whatsappNumber = '18765551234'; // Format: country code + number (no spaces or special chars)
+  // WhatsApp business number
+  const whatsappNumber = '18765493216'; // Format: country code + number (no spaces or special chars)
 
   const handleSendMessage = () => {
     if (!message.trim()) return;
