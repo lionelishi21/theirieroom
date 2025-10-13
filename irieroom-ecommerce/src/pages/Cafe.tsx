@@ -82,9 +82,7 @@ const Cafe: React.FC = () => {
   };
 
   const cafeImages = [
-    '/images/rasta_frasachiino.png',
-    '/images/mocha_frassachhiino.png',
-    '/images/latte_frassachino.png',
+    '/images/frassachino.gif',
   ];
 
   return (
