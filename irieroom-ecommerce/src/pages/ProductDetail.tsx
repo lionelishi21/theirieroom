@@ -37,6 +37,34 @@ const ProductDetail: React.FC = () => {
 
   return (
     <div className="product-detail-page">
+      <div className="page-svg-decorations">
+        <svg className="page-svg-1" width="140" height="140" viewBox="0 0 140 140">
+          <circle cx="70" cy="70" r="55" fill="none" stroke="var(--rasta-green)" strokeWidth="3" opacity="0.6" />
+          <circle cx="70" cy="70" r="35" fill="none" stroke="var(--rasta-yellow)" strokeWidth="2.5" opacity="0.7" />
+          <circle cx="70" cy="70" r="20" fill="var(--rasta-green)" opacity="0.5" />
+        </svg>
+        <svg className="page-svg-2" width="110" height="110" viewBox="0 0 110 110">
+          <path d="M55 5 L65 35 L95 35 L70 55 L80 85 L55 70 L30 85 L40 55 L15 35 L45 35 Z" 
+                fill="var(--rasta-yellow)" opacity="0.7" />
+        </svg>
+        <svg className="page-svg-3" width="130" height="130" viewBox="0 0 130 130">
+          <rect x="15" y="15" width="100" height="100" fill="none" stroke="var(--rasta-green)" strokeWidth="3" opacity="0.6" />
+          <rect x="30" y="30" width="70" height="70" fill="none" stroke="var(--rasta-yellow)" strokeWidth="2.5" opacity="0.7" />
+          <rect x="50" y="50" width="30" height="30" fill="var(--rasta-green)" opacity="0.5" />
+        </svg>
+        <svg className="page-svg-4" width="95" height="95" viewBox="0 0 95 95">
+          <circle cx="47.5" cy="47.5" r="40" fill="var(--rasta-yellow)" opacity="0.6" />
+          <circle cx="47.5" cy="47.5" r="25" fill="var(--rasta-green)" opacity="0.4" />
+        </svg>
+        <svg className="page-svg-5" width="100" height="100" viewBox="0 0 100 100">
+          <polygon points="50,5 75,25 75,55 50,75 25,55 25,25" fill="none" stroke="var(--rasta-green)" strokeWidth="3" opacity="0.6" />
+          <polygon points="50,20 65,35 65,50 50,65 35,50 35,35" fill="var(--rasta-yellow)" opacity="0.5" />
+        </svg>
+        <svg className="page-svg-6" width="85" height="85" viewBox="0 0 85 85">
+          <ellipse cx="42.5" cy="42.5" rx="35" ry="25" fill="none" stroke="var(--rasta-green)" strokeWidth="2.5" opacity="0.6" />
+          <ellipse cx="42.5" cy="42.5" rx="20" ry="15" fill="var(--rasta-yellow)" opacity="0.5" />
+        </svg>
+      </div>
       <div className="container">
         <div className="breadcrumb">
           <Link to="/">Home</Link> / <Link to="/shop">Shop</Link> / {product.name}

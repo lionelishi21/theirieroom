@@ -89,6 +89,42 @@ const Cafe: React.FC = () => {
     <div className="cafe-page">
       {/* Hero Banner */}
       <section className="cafe-hero-new" style={{ background: `#e8e9e4` }}>
+        <div className="page-svg-decorations">
+          <svg className="page-svg-1" width="170" height="170" viewBox="0 0 170 170">
+            <circle cx="85" cy="85" r="70" fill="none" stroke="var(--rasta-green)" strokeWidth="3" opacity="0.6" />
+            <circle cx="85" cy="85" r="50" fill="none" stroke="var(--rasta-yellow)" strokeWidth="2.5" opacity="0.7" />
+            <circle cx="85" cy="85" r="35" fill="var(--rasta-green)" opacity="0.5" />
+          </svg>
+          <svg className="page-svg-2" width="135" height="135" viewBox="0 0 135 135">
+            <path d="M67.5 5 L77.5 45 L117.5 45 L87.5 65 L97.5 105 L67.5 90 L37.5 105 L47.5 65 L17.5 45 L57.5 45 Z" 
+                  fill="var(--rasta-yellow)" opacity="0.7" />
+          </svg>
+          <svg className="page-svg-3" width="155" height="155" viewBox="0 0 155 155">
+            <rect x="25" y="25" width="105" height="105" fill="none" stroke="var(--rasta-green)" strokeWidth="3" opacity="0.6" />
+            <rect x="40" y="40" width="75" height="75" fill="none" stroke="var(--rasta-yellow)" strokeWidth="2.5" opacity="0.7" />
+            <rect x="60" y="60" width="35" height="35" fill="var(--rasta-green)" opacity="0.5" />
+          </svg>
+          <svg className="page-svg-4" width="115" height="115" viewBox="0 0 115 115">
+            <circle cx="57.5" cy="57.5" r="50" fill="var(--rasta-yellow)" opacity="0.6" />
+            <circle cx="57.5" cy="57.5" r="35" fill="var(--rasta-green)" opacity="0.4" />
+          </svg>
+          <svg className="page-svg-5" width="125" height="125" viewBox="0 0 125 125">
+            <polygon points="62.5,10 92.5,30 92.5,60 62.5,80 32.5,60 32.5,30" fill="none" stroke="var(--rasta-green)" strokeWidth="3" opacity="0.6" />
+            <polygon points="62.5,25 77.5,40 77.5,55 62.5,70 47.5,55 47.5,40" fill="var(--rasta-yellow)" opacity="0.5" />
+          </svg>
+          <svg className="page-svg-6" width="105" height="105" viewBox="0 0 105 105">
+            <ellipse cx="52.5" cy="52.5" rx="45" ry="35" fill="none" stroke="var(--rasta-green)" strokeWidth="2.5" opacity="0.6" />
+            <ellipse cx="52.5" cy="52.5" rx="30" ry="22" fill="var(--rasta-yellow)" opacity="0.5" />
+          </svg>
+          <svg className="page-svg-7" width="110" height="110" viewBox="0 0 110 110">
+            <path d="M55 20 L65 45 L90 45 L70 60 L75 85 L55 75 L35 85 L40 60 L20 45 L45 45 Z" 
+                  fill="var(--rasta-green)" opacity="0.6" />
+          </svg>
+          <svg className="page-svg-8" width="90" height="90" viewBox="0 0 90 90">
+            <rect x="15" y="15" width="60" height="60" rx="10" fill="none" stroke="var(--rasta-yellow)" strokeWidth="2.5" opacity="0.6" />
+            <rect x="25" y="25" width="40" height="40" rx="8" fill="var(--rasta-green)" opacity="0.4" />
+          </svg>
+        </div>
         <div className="container">
           <div className="cafe-hero-grid">
             <motion.div

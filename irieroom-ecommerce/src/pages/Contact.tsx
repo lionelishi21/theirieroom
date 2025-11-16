@@ -21,6 +21,38 @@ const Contact: React.FC = () => {
 
   return (
     <div className="contact-page">
+      <div className="page-svg-decorations">
+        <svg className="page-svg-1" width="160" height="160" viewBox="0 0 160 160">
+          <circle cx="80" cy="80" r="65" fill="none" stroke="var(--rasta-green)" strokeWidth="3" opacity="0.6" />
+          <circle cx="80" cy="80" r="45" fill="none" stroke="var(--rasta-yellow)" strokeWidth="2.5" opacity="0.7" />
+          <circle cx="80" cy="80" r="30" fill="var(--rasta-green)" opacity="0.5" />
+        </svg>
+        <svg className="page-svg-2" width="125" height="125" viewBox="0 0 125 125">
+          <path d="M62.5 5 L72.5 40 L107.5 40 L82.5 60 L92.5 95 L62.5 80 L32.5 95 L42.5 60 L17.5 40 L52.5 40 Z" 
+                fill="var(--rasta-yellow)" opacity="0.7" />
+        </svg>
+        <svg className="page-svg-3" width="145" height="145" viewBox="0 0 145 145">
+          <rect x="20" y="20" width="105" height="105" fill="none" stroke="var(--rasta-green)" strokeWidth="3" opacity="0.6" />
+          <rect x="35" y="35" width="75" height="75" fill="none" stroke="var(--rasta-yellow)" strokeWidth="2.5" opacity="0.7" />
+          <rect x="55" y="55" width="35" height="35" fill="var(--rasta-green)" opacity="0.5" />
+        </svg>
+        <svg className="page-svg-4" width="105" height="105" viewBox="0 0 105 105">
+          <circle cx="52.5" cy="52.5" r="45" fill="var(--rasta-yellow)" opacity="0.6" />
+          <circle cx="52.5" cy="52.5" r="30" fill="var(--rasta-green)" opacity="0.4" />
+        </svg>
+        <svg className="page-svg-5" width="115" height="115" viewBox="0 0 115 115">
+          <polygon points="57.5,10 85,30 85,60 57.5,80 30,60 30,30" fill="none" stroke="var(--rasta-green)" strokeWidth="3" opacity="0.6" />
+          <polygon points="57.5,25 72.5,40 72.5,55 57.5,70 42.5,55 42.5,40" fill="var(--rasta-yellow)" opacity="0.5" />
+        </svg>
+        <svg className="page-svg-6" width="95" height="95" viewBox="0 0 95 95">
+          <ellipse cx="47.5" cy="47.5" rx="40" ry="30" fill="none" stroke="var(--rasta-green)" strokeWidth="2.5" opacity="0.6" />
+          <ellipse cx="47.5" cy="47.5" rx="25" ry="18" fill="var(--rasta-yellow)" opacity="0.5" />
+        </svg>
+        <svg className="page-svg-7" width="100" height="100" viewBox="0 0 100 100">
+          <path d="M50 20 L60 40 L80 40 L65 55 L70 75 L50 65 L30 75 L35 55 L20 40 L40 40 Z" 
+                fill="var(--rasta-green)" opacity="0.6" />
+        </svg>
+      </div>
       <div className="container">
         <div className="contact-header">
           <h1>Get in Touch</h1>

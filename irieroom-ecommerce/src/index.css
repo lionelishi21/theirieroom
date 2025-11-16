@@ -34,6 +34,14 @@
   --rasta-yellow: #fbbf24;
   --rasta-green: #22c55e;
   
+  /* Semi-dark Jamaica colors */
+  --jamaica-green-dark: #0d5d31;
+  --jamaica-gold-dark: #b8860b;
+  --jamaica-red-dark: #8b0000;
+  --jamaica-bg: #1a1f1c;
+  --jamaica-bg-light: #2a332e;
+  --jamaica-accent: #1e4d2b;
+  
   color-scheme: light;
 
   font-synthesis: none;
@@ -46,7 +54,7 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-  background: #ffffff;
+  background: #f8f9fa;
   color: var(--text);
   overflow-x: hidden;
 }
@@ -58,7 +66,7 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background: #f8f9fa;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 50%, #f0fdf4 100%);
   pointer-events: none;
   z-index: 0;
 }
