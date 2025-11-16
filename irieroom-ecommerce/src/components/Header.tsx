@@ -1,19 +1,28 @@
 import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { ShoppingCart, Menu, X, Search } from 'lucide-react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { ShoppingCart, Menu, X, Search, ChevronDown } from 'lucide-react';
 import { useCart } from '../contexts/CartContext';
+import { categories } from '../data/products';
 import logo from '../assets/logo.png';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const [isCategoryOpen, setIsCategoryOpen] = React.useState(false);
   const { getCartCount } = useCart();
   const location = useLocation();
+  const navigate = useNavigate();
   
   const isActive = (path: string) => {
     if (path === '/') {
       return location.pathname === '/';
     }
     return location.pathname.startsWith(path);
+  };
+
+  const handleCategoryClick = (category: string) => {
+    navigate(`/shop?category=${category}`);
+    setIsCategoryOpen(false);
+    setIsMenuOpen(false);
   };
 
   return (
@@ -42,13 +51,33 @@ const Header: React.FC = () => {
             >
               Home
             </Link>
-            <Link 
-              to="/shop" 
-              onClick={() => setIsMenuOpen(false)}
-              className={isActive('/shop') ? 'nav-active' : ''}
+            <div 
+              className="nav-category-dropdown"
+              onMouseEnter={() => setIsCategoryOpen(true)}
+              onMouseLeave={() => setIsCategoryOpen(false)}
             >
-              Shop
-            </Link>
+              <Link 
+                to="/shop" 
+                onClick={() => setIsMenuOpen(false)}
+                className={isActive('/shop') ? 'nav-active' : ''}
+              >
+                Shop
+                <ChevronDown size={16} />
+              </Link>
+              {isCategoryOpen && (
+                <div className="category-dropdown-menu">
+                  {categories.map((category) => (
+                    <button
+                      key={category}
+                      onClick={() => handleCategoryClick(category)}
+                      className="category-dropdown-item"
+                    >
+                      {category}
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
             <Link 
               to="/cafe" 
               onClick={() => setIsMenuOpen(false)}

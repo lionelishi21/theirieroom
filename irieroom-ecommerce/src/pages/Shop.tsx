@@ -1,12 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import ProductCard from '../components/ProductCard';
 import { products, categories } from '../data/products';
 import { Filter, Flame, Zap, Shield, Package } from 'lucide-react';
 
 const Shop: React.FC = () => {
-  const [selectedCategory, setSelectedCategory] = useState('All');
+  const [searchParams, setSearchParams] = useSearchParams();
+  const categoryFromUrl = searchParams.get('category') || 'All';
+  const [selectedCategory, setSelectedCategory] = useState(categoryFromUrl);
   const [sortBy, setSortBy] = useState('featured');
+
+  useEffect(() => {
+    const categoryParam = searchParams.get('category');
+    if (categoryParam && categories.includes(categoryParam)) {
+      setSelectedCategory(categoryParam);
+    }
+  }, [searchParams]);
 
   const filteredProducts = products.filter(
     (product) => selectedCategory === 'All' || product.category === selectedCategory
@@ -157,6 +167,61 @@ const Shop: React.FC = () => {
       </section>
 
       <div className="container">
+        {/* Category Cards Section */}
+        <section className="category-cards-section">
+          <motion.h2
+            className="category-cards-title"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            Shop by Category
+          </motion.h2>
+          <div className="category-cards-grid">
+            {categories.filter(cat => cat !== 'All').map((category, index) => {
+              // Unsplash images for each category
+              const categoryImages: { [key: string]: string } = {
+                'Glass': 'https://images.unsplash.com/photo-1582560475093-ba66accbc424?w=600&h=400&fit=crop',
+                'Vaporizers': 'https://images.unsplash.com/photo-1589998059171-988d887df646?w=600&h=400&fit=crop',
+                'Accessories': 'https://images.unsplash.com/photo-1603909075881-3c7d98c4a6ff?w=600&h=400&fit=crop',
+                'Papers': 'https://images.unsplash.com/photo-1621607512905-39e6981b7e7e?w=600&h=400&fit=crop',
+                'Storage': 'https://images.unsplash.com/photo-1584308972272-9e4e7685e80f?w=600&h=400&fit=crop',
+                'Coffee': 'https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=600&h=400&fit=crop',
+                'Tea': 'https://images.unsplash.com/photo-1515823064-d6e0c04616a7?w=600&h=400&fit=crop',
+                'Beverages': 'https://images.unsplash.com/photo-1517487881594-2787fef5ebf7?w=600&h=400&fit=crop',
+                'Edibles': 'https://images.unsplash.com/photo-1587049352846-4a222e784010?w=600&h=400&fit=crop',
+                'Merch': 'https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=600&h=400&fit=crop'
+              };
+
+              const categoryCount = products.filter(p => p.category === category).length;
+
+              return (
+                <motion.div
+                  key={category}
+                  className="category-card"
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1, duration: 0.5 }}
+                  whileHover={{ scale: 1.05, y: -5 }}
+                  onClick={() => {
+                    setSelectedCategory(category);
+                    setSearchParams({ category });
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }}
+                >
+                  <div className="category-card-image">
+                    <img src={categoryImages[category] || categoryImages['Accessories']} alt={category} />
+                    <div className="category-card-overlay"></div>
+                  </div>
+                  <div className="category-card-content">
+                    <h3 className="category-card-title">{category}</h3>
+                    <p className="category-card-count">{categoryCount} {categoryCount === 1 ? 'product' : 'products'}</p>
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
+        </section>
 
         <div className="shop-controls">
           <div className="filter-section">
