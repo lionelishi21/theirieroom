@@ -1,0 +1,13 @@
+[build]
+  base = "irieroom-ecommerce"
+  command = "npm run build"
+  publish = "irieroom-ecommerce/dist"
+
+[build.environment]
+  NODE_VERSION = "18"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
