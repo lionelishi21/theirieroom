@@ -1,7 +1,7 @@
 [build]
   base = "irieroom-ecommerce"
   command = "npm run build"
-  publish = "irieroom-ecommerce/dist"
+  publish = "dist"
 
 [build.environment]
   NODE_VERSION = "18"
