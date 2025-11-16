@@ -28,7 +28,7 @@ const ModernHero: React.FC = () => {
       y: 0,
       opacity: 1,
       transition: {
-        type: 'spring',
+        type: 'spring' as const,
         stiffness: 100,
       },
     },
@@ -40,7 +40,7 @@ const ModernHero: React.FC = () => {
       scale: 1,
       rotate: 0,
       transition: {
-        type: 'spring',
+        type: 'spring' as const,
         stiffness: 100,
         delay: 0.2,
       },
@@ -52,7 +52,7 @@ const ModernHero: React.FC = () => {
     transition: {
       duration: 3,
       repeat: Infinity,
-      ease: 'easeInOut',
+      ease: 'easeInOut' as const,
     },
   };
 
@@ -167,7 +167,7 @@ const ModernHero: React.FC = () => {
         transition={{
           duration: 5,
           repeat: Infinity,
-          ease: 'easeInOut',
+          ease: 'easeInOut' as const,
         }}
       />
       <motion.div
@@ -179,7 +179,7 @@ const ModernHero: React.FC = () => {
         transition={{
           duration: 6,
           repeat: Infinity,
-          ease: 'easeInOut',
+          ease: 'easeInOut' as const,
         }}
       />
     </div>

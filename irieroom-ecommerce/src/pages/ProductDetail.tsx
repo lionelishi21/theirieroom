@@ -45,6 +45,12 @@ const ProductDetail: React.FC = () => {
         <div className="product-detail-grid">
           <div className="product-image-section">
             <img src={product.image} alt={product.name} />
+              {/* Added external promotional image */}
+              <img
+                src="https://res.cloudinary.com/dwfbqodsx/image/upload/v1763288338/WhatsApp_Image_2025-10-25_at_12.09.26_xkcbfq.jpg"
+                alt={`${product.name} promotional`}
+                style={{ marginTop: '1rem', width: '100%', height: 'auto', borderRadius: '12px' }}
+              />
           </div>
 
           <div className="product-detail-info">

@@ -88,7 +88,7 @@ const Cafe: React.FC = () => {
   return (
     <div className="cafe-page">
       {/* Hero Banner */}
-      <section className="cafe-hero-new">
+      <section className="cafe-hero-new" style={{ background: `#e8e9e4` }}>
         <div className="container">
           <div className="cafe-hero-grid">
             <motion.div
@@ -163,15 +163,7 @@ const Cafe: React.FC = () => {
               {cafeImages.map((img, index) => (
                 <motion.div
                   key={index}
-                  className={`cafe-hero-image-card img-${index + 1}`}
-                  initial={{ scale: 0, rotate: -10 }}
                   animate={{ scale: 1, rotate: 0 }}
-                  transition={{
-                    delay: 0.6 + index * 0.1,
-                    type: 'spring',
-                    stiffness: 100,
-                  }}
-                  whileHover={{ scale: 1.1, rotate: 0, zIndex: 10 }}
                 >
                   <img src={img} alt={`Café drink ${index + 1}`} />
                 </motion.div>
